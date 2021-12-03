@@ -1,26 +1,30 @@
+/** configuration relate to UI */
+import './i18n';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useRoutes } from 'react-router-dom';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import useScrollReset from './hooks/useScrollReset';
+import LoadingScreen from './components/LoadingScreen';
+import { createCustomTheme } from './theme';
+import routes from './routes';
 
-function App() {
+const App: React.FC = () => {
+  const content = useRoutes(routes);
+  useScrollReset();
+
+  const theme = createCustomTheme({
+    responsiveFontSizes: true,
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // using Suspense: wait for language json files loaded
+    <React.Suspense fallback={<LoadingScreen />}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {content}
+      </ThemeProvider>
+    </React.Suspense>
   );
-}
+};
 
 export default App;

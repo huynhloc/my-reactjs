@@ -3,8 +3,7 @@
     "target": "es5",
     "lib": [
       "dom",
-      "dom.iterable",
-      "esnext"
+      "dom.iterable"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -17,10 +16,32 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "jsx": "react-jsx",
     "noEmit": true,
-    "jsx": "react-jsx"
+    "incremental": true,
+    "alwaysStrict": true,
+    "baseUrl": ".",
+    "typeRoots": [
+      "./type",
+      "./node_modules/@types/"
+    ],
+    "types": [
+      "node",
+      "jest"
+    ],
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true
   },
+  "plugins": [
+    {
+      "name": "typescript-tslint-plugin"
+    }
+  ],
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
