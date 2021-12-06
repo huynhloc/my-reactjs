@@ -16,7 +16,7 @@ const languageOptions: Record<string, { icon: string; label: string }> = {
     icon: '/static/icons/us_flag.svg',
     label: 'Vietnam',
   },
-  en: {
+  'en-US': {
     icon: '/static/icons/us_flag.svg',
     label: 'English',
   },
@@ -44,7 +44,7 @@ const LanguagePopover: React.FC = () => {
     setOpen(false);
   };
 
-  const selectedOption = languageOptions[i18n.language];
+  const selectedOption = languageOptions[i18n.language || 'en-US'];
 
   return (
     <>
