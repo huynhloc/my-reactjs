@@ -32,7 +32,7 @@ const LanguagePopover: React.FC = () => {
     setOpen(false);
   };
 
-  const selectedOption = i18n.language || 'en';
+  const selectedOption = i18n.language || 'en-US';
 
   return (
     <>
