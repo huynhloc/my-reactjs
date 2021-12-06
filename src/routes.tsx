@@ -24,6 +24,19 @@ const routes = [
         element: <Home />,
       },
       {
+        path: 'about',
+        children: [
+          {
+            path: '',
+            element: <Home />,
+          },
+          {
+            path: 'sub-path',
+            element: <Home />,
+          },
+        ],
+      },
+      {
         path: '401',
         element: <Home />,
       },
@@ -33,10 +46,6 @@ const routes = [
       },
       {
         path: '500',
-        element: <Home />,
-      },
-      {
-        path: '*',
         element: <Home />,
       },
     ],

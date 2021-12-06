@@ -133,6 +133,10 @@ const baseOptions = {
     overline: {
       fontWeight: 600,
     },
+    subtitle1: {
+      fontWeight: 700,
+      fontSize: '1rem',
+    },
   },
   shape: {
     borderRadius: 8,
