@@ -3,28 +3,16 @@ import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   Box,
-  IconButton,
-  ListItemIcon,
+  Button,
   ListItemText,
   MenuItem,
   Popover,
   Typography,
 } from '@mui/material';
+import GlobeIcon from '../icons/Globe';
+import ArrowDownIcon from '../icons/ArrowDown';
 
-const languageOptions: Record<string, { icon: string; label: string }> = {
-  vi: {
-    icon: '/static/icons/us_flag.svg',
-    label: 'Vietnam',
-  },
-  'en-US': {
-    icon: '/static/icons/us_flag.svg',
-    label: 'English',
-  },
-  fr: {
-    icon: '/static/icons/us_flag.svg',
-    label: 'French',
-  },
-};
+const languageOptions: string[] = ['vi', 'en', 'fr'];
 
 const LanguagePopover: React.FC = () => {
   const anchorRef = useRef(null);
@@ -44,24 +32,41 @@ const LanguagePopover: React.FC = () => {
     setOpen(false);
   };
 
-  const selectedOption = languageOptions[i18n.language || 'en-US'];
+  const selectedOption = i18n.language || 'en-US';
 
   return (
     <>
-      <IconButton onClick={handleOpen} ref={anchorRef}>
+      <Button
+        size="small"
+        onClick={handleOpen}
+        ref={anchorRef}
+        startIcon={<GlobeIcon />}
+        disableRipple
+        disableTouchRipple
+        disableFocusRipple
+        sx={{
+          height: '48px',
+          paddingX: 1,
+        }}
+      >
+        <Box sx={{ width: 30 }}>
+          <Typography
+            sx={{
+              color: 'black',
+            }}
+            variant="subtitle1"
+          >
+            {selectedOption}
+          </Typography>
+        </Box>
         <Box
           sx={{
-            display: 'flex',
-            height: 20,
-            width: 20,
-            '& img': {
-              width: '100%',
-            },
+            paddingTop: '20px',
           }}
         >
-          <img alt={selectedOption.label} src={selectedOption.icon} />
+          <ArrowDownIcon />
         </Box>
-      </IconButton>
+      </Button>
       <Popover
         anchorEl={anchorRef.current}
         anchorOrigin={{
@@ -72,35 +77,24 @@ const LanguagePopover: React.FC = () => {
         onClose={handleClose}
         open={open}
         PaperProps={{
-          sx: { width: 240 },
+          sx: { width: 70 },
         }}
       >
-        {Object.keys(languageOptions).map((language) => (
+        {languageOptions.map((language) => (
           <MenuItem
             onClick={() => handleChangeLanguage(language)}
             key={language}
           >
-            <ListItemIcon>
-              <Box
-                sx={{
-                  display: 'flex',
-                  height: 20,
-                  width: 20,
-                  '& img': {
-                    width: '100%',
-                  },
-                }}
-              >
-                <img
-                  alt={languageOptions[language].label}
-                  src={languageOptions[language].icon}
-                />
-              </Box>
-            </ListItemIcon>
             <ListItemText
               primary={
-                <Typography color="textPrimary" variant="subtitle2">
-                  {languageOptions[language].label}
+                <Typography
+                  sx={{
+                    color: 'black',
+                    textTransform: 'uppercase',
+                  }}
+                  variant="subtitle1"
+                >
+                  {language}
                 </Typography>
               }
             />

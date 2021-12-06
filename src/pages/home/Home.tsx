@@ -9,17 +9,27 @@ const Home = () => {
       <Typography variant="h4">{t('hello')}</Typography>
       <Box display="flex">
         <Box sx={{ p: 1 }}>
-          <Button variant="contained" color="primary" size="large">
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            disableElevation
+          >
             Button 1
           </Button>
         </Box>
         <Box sx={{ p: 1 }}>
-          <Button variant="contained" color="secondary">
+          <Button variant="contained" color="secondary" disableElevation>
             Button 2
           </Button>
         </Box>
         <Box sx={{ p: 1 }}>
-          <Button variant="contained" color="tertiary" size="small">
+          <Button
+            variant="contained"
+            color="tertiary"
+            size="small"
+            disableElevation
+          >
             Button 3
           </Button>
         </Box>

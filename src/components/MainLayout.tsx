@@ -19,7 +19,7 @@ const MainLayout: React.FC<Props> = ({ children }) => {
   return (
     <MainLayoutRoot>
       <MainNavbar />
-      <Container maxWidth="lg" sx={{ mt: 2 }}>
+      <Container maxWidth="xl" sx={{ marginY: 2 }}>
         {children || <Outlet />}
       </Container>
       <Footer />
