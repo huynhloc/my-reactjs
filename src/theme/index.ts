@@ -179,7 +179,7 @@ const baseOptions = {
     },
     text: {
       primary: '#181A1B',
-      secondary: '#434A60',
+      secondary: '#565367',
     },
     warning: {
       contrastText: '#ffffff',
