@@ -11,7 +11,7 @@ const MainNavbar = () => {
         color: 'text.secondary',
       }}
     >
-      <Toolbar sx={{ minHeight: 64 }}>
+      <Toolbar sx={{ height: 80 }}>
         <RouterLink to="/">Logo Here</RouterLink>
         <Box sx={{ flexGrow: 1, ml: 2 }} />
         <LanguagePopover />

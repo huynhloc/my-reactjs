@@ -8,7 +8,7 @@ import MainNavbar from './MainNavbar';
 const MainLayoutRoot = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
   height: '100%',
-  paddingTop: 64,
+  paddingTop: 80,
 }));
 
 type Props = {
