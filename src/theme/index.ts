@@ -1,3 +1,5 @@
+/** https://mui.com/customization/default-theme/ */
+
 import {
   createTheme,
   responsiveFontSizes,
@@ -28,8 +30,20 @@ const baseOptions = {
     },
     MuiButton: {
       styleOverrides: {
-        root: {
-          textTransform: 'none',
+        sizeSmall: {
+          fontSize: 12,
+          lineHeight: '16px',
+          padding: '12px 30px',
+        },
+        sizeMedium: {
+          fontSize: 15,
+          lineHeight: '16px',
+          padding: '16px 30px',
+        },
+        sizeLarge: {
+          fontSize: 18,
+          lineHeight: '16px',
+          padding: '24px 30px',
         },
       },
     },
@@ -121,7 +135,57 @@ const baseOptions = {
     },
   },
   shape: {
-    borderRadius: 4,
+    borderRadius: 8,
+  },
+  palette: {
+    // MUI default action configuration
+    action: {
+      active: 'rgba(0,0,0,0.54)',
+      hover: 'rgba(0,0,0,0.04)',
+      hoverOpacity: 0.04,
+      selected: 'rgba(0,0,0,0.08)',
+      selectedOpacity: 0.08,
+      disabled: 'rgba(0,0,0,0.26)',
+      disabledOpacity: 0.38,
+      disabledBackground: 'rgba(0,0,0,0.12)',
+      focus: 'rgba(0,0,0,0.12)',
+      focusOpacity: 0.12,
+      activatedOpacity: 0.12,
+    },
+    background: {
+      default: '#E5E5E5',
+      paper: '#ffffff',
+    },
+    error: {
+      contrastText: '#ffffff',
+      main: '#f44336',
+    },
+    mode: 'light',
+    primary: {
+      contrastText: '#ffffff',
+      main: '#3C6670',
+    },
+    secondary: {
+      contrastText: '#ffffff',
+      main: '#1E1A34',
+    },
+    tertiary: {
+      contrastText: '#181A1B',
+      main: '#F1B434',
+    },
+    success: {
+      contrastText: '#ffffff',
+      main: '#4caf50',
+    },
+    text: {
+      primary: '#181A1B',
+      secondary: '#434A60',
+    },
+    warning: {
+      contrastText: '#ffffff',
+      main: '#ff9800',
+    },
+    divider: '#C7C6CC',
   },
   shadows: defaultShadows,
 } as ThemeOptions;
