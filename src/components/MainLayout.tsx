@@ -8,7 +8,7 @@ import MainNavbar from './MainNavbar';
 const MainLayoutRoot = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
   height: '100%',
-  paddingTop: 64,
+  paddingTop: 80,
 }));
 
 type Props = {
@@ -19,7 +19,7 @@ const MainLayout: React.FC<Props> = ({ children }) => {
   return (
     <MainLayoutRoot>
       <MainNavbar />
-      <Container maxWidth="lg" sx={{ mt: 2 }}>
+      <Container maxWidth="xl" sx={{ marginY: 2 }}>
         {children || <Outlet />}
       </Container>
       <Footer />
