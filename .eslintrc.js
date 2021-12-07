@@ -31,6 +31,7 @@ module.exports = {
     '@typescript-eslint/promise-function-async': 2,
     '@typescript-eslint/no-this-alias': 0,
     '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/no-empty-interface': 'off',
   },
   settings: {
     react: {
